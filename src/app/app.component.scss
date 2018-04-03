@@ -1,0 +1,21 @@
+
+$sidebar-width: 275px;
+$sidebar-padding: 5px;
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sidebar-width;
+    height: 100%;
+    z-index: 1;
+    border-right: 1px solid #f2f2f2;
+    overflow-x: hidden;
+    padding: $sidebar-padding;
+}
+
+.main-content {
+    margin-left: calc(#{$sidebar-width} + 2*#{$sidebar-padding});
+    background-color: #ECEFF1;
+    padding: 5px;
+}
