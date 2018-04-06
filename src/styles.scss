@@ -1,5 +1,29 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+$scrollbar-fore-color: #d2d2d2;
+$scrollbar-back-color: #fff;
+$scrollbar_size: 8px;
+
 body {
     margin: 0;
+}
+
+.slim-scrollbar {
+    // For Google Chrome
+  &::-webkit-scrollbar {
+      width:  $scrollbar_size;
+      height: $scrollbar_size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background: $scrollbar-fore-color;
+  }
+
+  &::-webkit-scrollbar-track {
+      background: $scrollbar-back-color;
+  }
+
+  // For Internet Explorer
+  scrollbar-face-color: $scrollbar-fore-color;
+  scrollbar-track-color: $scrollbar-back-color;
 }

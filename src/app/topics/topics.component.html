@@ -1,1 +1,17 @@
-TODO
+<mat-toolbar>
+    <mat-icon>menu</mat-icon>
+    <span class="app-title">ng-Hangout</span>
+</mat-toolbar>
+<mat-list [appAutoSize]="64" class="slim-scrollbar">
+    <mat-list-item *ngFor="let topic of topics">
+        <img matListAvatar [src]="topic.picture">
+        <div matLine>
+            <span class="title">{{topic.title}}</span>
+            <span class="date">{{topic.lastMessageDate | date: 'dd MMM'}}</span>
+        </div>
+        <p matLine>
+            <span class="last-message-author"> {{topic.lastMessageAuthor}} </span>
+            <span class="last-message">: {{topic.lastMessage}} </span>
+        </p>
+    </mat-list-item>
+</mat-list>

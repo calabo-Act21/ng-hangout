@@ -1,0 +1,18 @@
+
+$sidebar-width: 300px;
+$sidebar-padding: 5px;
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sidebar-width;
+    z-index: 1;
+    border-right: 1px solid #f2f2f2;
+}
+
+.main-content {
+    margin-left: $sidebar-width;
+    background-color: #ECEFF1;
+    padding: 5px;
+}
