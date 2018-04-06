@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { TopicModel } from './topic.model';
 
 @Component({
@@ -8,9 +8,15 @@ import { TopicModel } from './topic.model';
 })
 export class TopicsComponent implements OnInit {
   @Input() topics: TopicModel[];
+  @Output() onSelected: EventEmitter<TopicModel> = new EventEmitter<TopicModel>();
+  selectedTopic: TopicModel;
   constructor() { }
 
   ngOnInit() {
   }
 
+  selectTopic(topic: TopicModel) {
+    this.selectedTopic = topic;
+    this.onSelected.next(this.selectedTopic);
+  }
 }

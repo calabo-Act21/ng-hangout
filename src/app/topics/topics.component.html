@@ -3,7 +3,7 @@
     <span class="app-title">ng-Hangout</span>
 </mat-toolbar>
 <mat-list [appAutoSize]="64" class="slim-scrollbar">
-    <mat-list-item *ngFor="let topic of topics">
+    <mat-list-item *ngFor="let topic of topics" [ngClass]="{selected: selectedTopic && selectedTopic.id === topic.id}" (click)="selectTopic(topic)">
         <img matListAvatar [src]="topic.picture">
         <div matLine>
             <span class="title">{{topic.title}}</span>

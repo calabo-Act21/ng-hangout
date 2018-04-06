@@ -13,6 +13,7 @@ mat-toolbar {
 mat-list {
     overflow: auto;
     mat-list-item {
+        cursor: pointer;
         .date {
             float: right;
             font-size: 12px;
@@ -23,5 +24,11 @@ mat-list {
         .last-message {
             color: #8a8a8a;
         }
+    }
+    mat-list-item:hover {
+        background: #F5F5F5;
+    }
+    mat-list-item.selected {
+        background: #EEEEEE;
     }
 }
