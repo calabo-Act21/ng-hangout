@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { TopicModel } from '../topics/topic.model';
-import { ChatMessageModel } from '../chat/chat-message.model';
+import { ChatModel, ChatMessageModel } from '../chat/chat.model';
 
 @Injectable()
 export class ChatRoomService {
@@ -15,11 +15,13 @@ export class ChatRoomService {
         );
     }
 
-    getTopicMessages(topic: TopicModel): Observable<ChatMessageModel[]> {
-        return Observable.of([
-            new ChatMessageModel({ author: 'You', date: new Date(), content: 'Hello There ' + topic.title + ' !' }),
-            new ChatMessageModel({ author: 'You', date: new Date(), content: 'How are you ?' }),
-            new ChatMessageModel({ author: topic.title, date: new Date(), content: topic.lastMessage })
-        ]);
+    getTopicMessages(topic: TopicModel): Observable<ChatModel> {
+        const messages: ChatMessageModel[] = [
+            new ChatMessageModel({ author: topic.title, date: new Date(), content: 'Hello There ! My name is ' + topic.title + ' !' }),
+            new ChatMessageModel({ author: topic.title, date: new Date(), content: 'How are you ?' }),
+            new ChatMessageModel({ author: 'You', date: new Date(), content: topic.lastMessage })
+        ];
+        const chat = new ChatModel(topic.title, messages);
+        return Observable.of(chat);
     }
 }

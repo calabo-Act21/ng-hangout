@@ -1,6 +1,6 @@
 <mat-toolbar>
     <mat-icon>menu</mat-icon>
-    <span class="app-title">ng-Hangout</span>
+    <span class="title">ng-Hangout</span>
 </mat-toolbar>
 <mat-list [appAutoSize]="64" class="slim-scrollbar">
     <mat-list-item *ngFor="let topic of topics" [ngClass]="{selected: selectedTopic && selectedTopic.id === topic.id}" (click)="selectTopic(topic)">

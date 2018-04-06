@@ -1,1 +1,15 @@
-TODO
+<div *ngIf="chat;else noData">
+    <mat-toolbar>
+        <span class="title">{{chat.title}}</span>
+        <span class="spacer"></span>
+        <mat-icon>videocam</mat-icon>
+        <mat-icon>call_made</mat-icon>
+        <mat-icon>more_vert</mat-icon>
+    </mat-toolbar>
+</div>
+
+<ng-template #noData>
+    <div class="no-data" [style.width]="window.innerWidth - 300 + 'px'" [style.height]="window.innerHeight + 'px'">
+        <img src="assets/images/no-data.PNG" alt="">
+    </div>
+</ng-template>

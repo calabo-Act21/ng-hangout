@@ -1,6 +1,6 @@
 <div class="sidebar slim-scrollbar">
-  <app-topics [topics]="topics"></app-topics>
+  <app-topics [topics]="topics" (onItemSelected)="onTopicSelected($event)"></app-topics>
 </div>
-<div class="main-content" [appAutoSize]="10">
-  <app-chat></app-chat>
+<div class="main-content" [appAutoSize]="0">
+  <app-chat [chat]="chat"></app-chat>
 </div>

@@ -8,7 +8,7 @@ import { TopicModel } from './topic.model';
 })
 export class TopicsComponent implements OnInit {
   @Input() topics: TopicModel[];
-  @Output() onSelected: EventEmitter<TopicModel> = new EventEmitter<TopicModel>();
+  @Output() onItemSelected: EventEmitter<TopicModel> = new EventEmitter<TopicModel>();
   selectedTopic: TopicModel;
   constructor() { }
 
@@ -17,6 +17,6 @@ export class TopicsComponent implements OnInit {
 
   selectTopic(topic: TopicModel) {
     this.selectedTopic = topic;
-    this.onSelected.next(this.selectedTopic);
+    this.onItemSelected.next(this.selectedTopic);
   }
 }
